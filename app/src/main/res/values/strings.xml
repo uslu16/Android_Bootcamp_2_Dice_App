@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Android_Bootcamp_2_Dice_App</string>
+    <string name="dice_1">Dice 1</string>
+    <string name="dice_2">Dice 2</string>
+    <string name="dice_roll">Roll Dice</string>
+
+</resources>
