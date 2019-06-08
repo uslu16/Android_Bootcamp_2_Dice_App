@@ -8,6 +8,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import java.util.Random;
+
 public class MainActivity extends AppCompatActivity {
     Context  context;
 
@@ -18,9 +20,17 @@ public class MainActivity extends AppCompatActivity {
 
 
         Button dice_roll;
-        ImageView dice_left;
-        ImageView dice_right;
+        final ImageView dice_left;
+        final ImageView dice_right;
         ImageView dicee_logo;
+
+        final int[] diceArray= {
+        R.drawable.dice1,
+        R.drawable.dice2 ,
+        R.drawable.dice3,
+        R.drawable.dice4,
+        R.drawable.dice5,
+        R.drawable.dice6 };
 
         context = this;
 
@@ -33,12 +43,20 @@ public class MainActivity extends AppCompatActivity {
         dice_roll.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Random randomNumberGen = new Random();
+                int randomNum1= randomNumberGen.nextInt(6);
+                int randomNum2= randomNumberGen.nextInt(6);
 
-                Toast.makeText(context, " Button Ckicl :)", Toast.LENGTH_SHORT).show();
+
+                dice_left.setImageResource(diceArray[(randomNum1)]);
+
+                dice_right.setImageResource(diceArray[(randomNum2)]);
+
+
+                Toast.makeText(context," Random Num is "+ (randomNum1+1) +" "+ (randomNum2+1), Toast.LENGTH_SHORT).show();
             }
         });
 
-
-    }
+          }
 
 }
